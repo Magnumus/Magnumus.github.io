@@ -37,11 +37,11 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function() {
-    $("#tableData").hide();
-    $("#check").click(() => {
+    $(".showAfterCheck").hide();
+    $(".hideAfterCheck").click(() => {
       if($("#lastdigits").val() === "037296"){
-        $("#tableData").show();
-        $("#personel").hide();
+        $(".showAfterCheck").show();
+        $(".hideAfterCheck").hide();
       }
     })
   });
@@ -110,15 +110,15 @@
 		</tr>
 		<tr>
 			<td class="qiksweb51" rowspan="5"><img src="./person.png" alt="Фото"><p><a class="button024" href="#">Скачать QR-код</a></p></td>
-			<th class="qiksweb50">Passport No: <p class="PassP">ОK 037296</p></th>
+			<th class="qiksweb50">Passport No: <p class="PassP hideAfterCheck">О ****96</p><p class="PassP showAfterCheck">ОK 037296</p></th>
 			<th>
 						</th>
 		</tr>
 		<tr>
-			<th class="qiksweb50" colspan="2">Surname: <br><p class="PassP"><b>Алиев/ <br/>Aliev</b></p></th>
+			<th class="qiksweb50" colspan="2">Surname: <br><p class="PassP hideAfterCheck"><b>А****</p><p class="PassP showAfterCheck"><b>Алиев/ <br/>Aliev</b></p></th>
 		</tr>
 		<tr>
-			<th class="qiksweb50" colspan="2">Given names: <br><p class="PassP">Руслан Салимович/ <br/>Ruslan</p></th>
+			<th class="qiksweb50" colspan="2">Given names: <br><p class="PassP hideAfterCheck">Ruslan S*********</p><p class="PassP showAfterCheck">Руслан Салимович/ <br/>Ruslan</p></th>
 		</tr>  
 		<tr>
 			<th class="qiksweb50" colspan="2">Date of birth: <br><p class="PassP"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2000-11-18T00:00:00+03:00">18.11.2000</span></p></th>
@@ -130,14 +130,14 @@
     </table>
 	</div>
 	</div>
-	<div class="centerTab" id="personel">
+	<div class="centerTab hideAfterCheck">
 	<p style="    color: green;    font-size: 1.2em;    margin: 10px 0 5px 0;">To view your personal data, enter the last 6 digits of the passport number</p>
 	<p style="      font-size: 1.05em;    margin: 0 0 5px 0;">Для просмотра персональных данных введите последние 6 цифры номера паспорта</p>
     <p><input id="lastdigits" type="text" name="lastpass"></p>
     <input id="check" type="button" value="Check">
   </div>
 
-    <table id="tableData" class="iksweb table_block green">
+    <table class="showAfterCheck iksweb table_block green">
       <tbody><tr>
         <td class="iksweb01">Date of vaccination (date, month, year)</td>
         <td class="iksweb02">Name of the vaccine, manufacturer</td>
